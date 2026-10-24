@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumière & Loom | Bespoke Luxury Drapery & Custom Belgian Linen Curtains</title>
+  <meta name="description" content="Handcrafted made-to-measure curtains, 100% Belgian organic linen, acoustic velvet blackouts, and motorized smart drapes. Order free fabric swatch kits with worldwide shipping.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            linen: {
+              50: '#FDFBF7',
+              100: '#F7F3EB',
+              200: '#EFE9DC',
+              300: '#DFD5C2',
+              400: '#C5B59B',
+              500: '#A49174',
+            },
+            noir: {
+              800: '#34322D',
+              900: '#1F1E1B',
+              950: '#141311',
+            },
+            brass: {
+              400: '#D4AF37',
+              500: '#B8860B',
+              600: '#996F08',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth transitions and scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F7F3EB;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C5B59B;
+      border-radius: 9999px;
+    }
+    .fade-mask {
+      mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    }
+  </style>
+</head>
+<body class="bg-linen-50 text-noir-900 font-sans antialiased selection:bg-brass-500 selection:text-white">
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="bg-noir-950 text-linen-100 text-xs tracking-wider py-2.5 px-4 font-medium border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span class="uppercase tracking-widest text-[11px] text-linen-300 font-semibold">KYC & Merchant Verified Boutique</span>
+        <span class="text-white/30 hidden sm:inline">&bull;</span>
+        <span class="hidden sm:inline">Complimentary Swatch Sample Box on orders over <span class="currency-symbol">$</span><span class="price-val" data-usd="150">150</span></span>
+      </div>
+      <div class="flex items-center space-x-6 text-[11px] uppercase tracking-wider text-linen-200">
+        <span class="hidden md:inline">Tracked Express Courier: DHL / FedEx / UPS</span>
+        <!-- Currency Selector -->
+        <div class="relative inline-flex items-center">
+          <label for="currencySelect" class="sr-only">Currency</label>
+          <select id="currencySelect" onchange="changeCurrency(this.value)" class="bg-transparent text-linen-100 border-none text-[11px] tracking-wider focus:outline-none cursor-pointer uppercase font-semibold">
+            <option value="USD" class="bg-noir-900 text-white">USD ($)</option>
+            <option value="EUR" class="bg-noir-900 text-white">EUR (€)</option>
+            <option value="GBP" class="bg-noir-900 text-white">GBP (£)</option>
+            <option value="AUD" class="bg-noir-900 text-white">AUD (A$)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= STICKY HEADER ================= -->
+  <header class="sticky top-0 z-40 bg-linen-50/95 backdrop-blur-md border-b border-linen-200 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Mobile Menu Toggle -->
+        <div class="flex items-center lg:hidden">
+          <button type="button" onclick="toggleMobileNav()" class="p-2 text-noir-800 hover:text-brass-600 focus:outline-none" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+          </button>
+        </div>
+
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="#" class="group text-left">
+            <span class="font-serif text-2xl sm:text-3xl tracking-tight text-noir-950 font-medium block">LUMIÈRE &amp; LOOM</span>
+            <span class="text-[9px] uppercase tracking-[0.3em] text-linen-500 font-semibold block -mt-1 group-hover:text-brass-600 transition-colors">Atelier Des Rideaux Sur Mesure</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-noir-800">
+          <a href="#visualizer" class="hover:text-brass-600 transition-colors py-2">Custom Atelier</a>
+          <a href="#collections" class="hover:text-brass-600 transition-colors py-2">Collections</a>
+          <a href="#swatches" class="hover:text-brass-600 transition-colors py-2">Fabric Swatches</a>
+          <a href="#measure-guide" class="hover:text-brass-600 transition-colors py-2">Measuring Guide</a>
+          <a href="#lookbook" class="hover:text-brass-600 transition-colors py-2">Lookbook</a>
+          <a href="#compliance-info" class="text-linen-500 hover:text-noir-900 transition-colors py-2">Legal &amp; KYC</a>
+        </nav>
+
+        <!-- Right Icons: Search, Swatch CTA, Cart -->
+        <div class="flex items-center space-x-4 sm:space-x-5">
+          <button onclick="openSwatchModal()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 border border-linen-300 rounded-full text-xs font-medium text-noir-800 hover:bg-linen-100 transition-all">
+            <span class="w-2 h-2 rounded-full bg-brass-500"></span>
+            Order Swatches
+          </button>
+
+          <!-- Search Button -->
+          <button onclick="toggleSearch()" class="p-2 text-noir-800 hover:text-brass-600 transition-colors" aria-label="Search Catalog">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+          </button>
+
+          <!-- Cart Trigger -->
+          <button onclick="toggleCartDrawer(true)" class="relative p-2 text-noir-900 hover:text-brass-600 transition-colors" aria-label="Open Cart">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.67 0-1.19-.578-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+            <span id="cartBadgeCount" class="absolute top-1 right-0 w-4 h-4 rounded-full bg-noir-950 text-white text-[10px] font-bold flex items-center justify-center">2</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible Search Bar -->
+    <div id="searchDropdown" class="hidden border-t border-linen-200 bg-white px-4 py-3 shadow-inner">
+      <div class="max-w-3xl mx-auto flex items-center">
+        <input type="text" id="quickSearchInput" onkeyup="filterProductsQuick(this.value)" placeholder="Search Belgian linen, triple-weave velvet, motorized tracks, blackout..." class="w-full text-sm text-noir-800 placeholder-linen-400 focus:outline-none bg-transparent">
+        <button onclick="toggleSearch()" class="text-xs uppercase text-linen-400 hover:text-noir-900 font-semibold ml-4">Close</button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileNav" class="hidden lg:hidden border-t border-linen-200 bg-linen-50 px-6 py-6 space-y-4">
+      <a href="#visualizer" onclick="toggleMobileNav()" class="block text-sm uppercase tracking-widest font-semibold text-noir-800 hover:text-brass-600">Custom Atelier (Visualizer)</a>
+      <a href="#collections" onclick="toggleMobileNav()" class="block text-sm uppercase tracking-widest font-semibold text-noir-800 hover:text-brass-600">All Collections</a>
+      <a href="#swatches" onclick="toggleMobileNav()" class="block text-sm uppercase tracking-widest font-semibold text-noir-800 hover:text-brass-600">Fabric Swatch Box ($5 Refundable)</a>
+      <a href="#measure-guide" onclick="toggleMobileNav()" class="block text-sm uppercase tracking-widest font-semibold text-noir-800 hover:text-brass-600">Measurement Guide</a>
+      <a href="#lookbook" onclick="toggleMobileNav()" class="block text-sm uppercase tracking-widest font-semibold text-noir-800 hover:text-brass-600">Client Lookbook</a>
+      <a href="#compliance-info" onclick="toggleMobileNav()" class="block text-sm uppercase tracking-widest font-semibold text-linen-500 hover:text-noir-800">Legal, Shipping &amp; KYC Verification</a>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative min-h-[85vh] flex items-center bg-linen-100 overflow-hidden border-b border-linen-200">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2000&q=80" 
+           alt="Sunlit minimalist room with cascading natural linen curtains" 
+           class="w-full h-full object-cover object-center filter brightness-[0.92]">
+      <div class="absolute inset-0 bg-gradient-to-r from-linen-50/95 via-linen-50/70 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-linen-300 text-noir-900 text-xs font-semibold uppercase tracking-widest mb-6 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-brass-500"></span>
+          Direct-From-Loom Made to Measure
+        </div>
+        
+        <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-noir-950 tracking-tight leading-[1.08]">
+          Bespoke Drapery <br>
+          <span class="italic font-normal">Crafted for Quiet Luxury.</span>
+        </h1>
+        
+        <p class="mt-6 text-base sm:text-lg text-noir-800 font-normal leading-relaxed max-w-xl">
+          Elevate every window with authentic Flanders flax linen, blackout velvet acoustics, and precision European tailoring. Exact millimeter custom cuts delivered in 14 business days.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <a href="#visualizer" class="inline-flex justify-center items-center px-8 py-4 bg-noir-950 text-linen-50 font-semibold text-xs uppercase tracking-widest rounded-none hover:bg-brass-600 transition-colors shadow-lg shadow-noir-950/10">
+            Build Your Custom Drapery
+          </a>
+          <button onclick="openSwatchModal()" class="inline-flex justify-center items-center px-7 py-4 bg-white/90 text-noir-900 border border-linen-300 font-semibold text-xs uppercase tracking-widest rounded-none hover:bg-white hover:border-noir-950 transition-all backdrop-blur-sm">
+            Order Free Swatches ($5 Kit)
+          </button>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="mt-12 pt-8 border-t border-noir-900/15 grid grid-cols-3 gap-4 text-xs font-medium text-noir-800">
+          <div>
+            <span class="font-serif text-lg font-semibold block text-noir-950">100% Belgian</span>
+            <span class="text-linen-500 text-[11px]">Organic Certified Flax</span>
+          </div>
+          <div>
+            <span class="font-serif text-lg font-semibold block text-noir-950">Guaranteed Fit</span>
+            <span class="text-linen-500 text-[11px]">Sure-Fit Insurance Included</span>
+          </div>
+          <div>
+            <span class="font-serif text-lg font-semibold block text-noir-950">Global DDP</span>
+            <span class="text-linen-500 text-[11px]">All Duties &amp; Taxes Pre-Paid</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE VISUALIZER & CALCULATOR ================= -->
+  <section id="visualizer" class="py-20 lg:py-28 bg-white border-b border-linen-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brass-600">Interactive Drapery Studio</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-light text-noir-950 mt-2">Design Your Custom Window Treatment</h2>
+        <p class="text-linen-500 text-sm sm:text-base mt-3">Configure real dimensions, select weave weight, lining permeability, and heading style with immediate live preview and pricing.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Live Render & Style Preview (Left 7 Cols) -->
+        <div class="lg:col-span-7 bg-linen-100 p-6 sm:p-8 rounded-none border border-linen-200 sticky top-24">
+          
+          <div class="relative aspect-[4/3] w-full overflow-hidden bg-linen-200 border border-linen-300 mb-6 group">
+            <img id="visRoomImage" 
+                 src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=80" 
+                 alt="Living Room Visualization Preview" 
+                 class="w-full h-full object-cover transition-all duration-700">
+            
+            <!-- Dynamic Drape Overlay simulation -->
+            <div id="visDrapeOverlay" class="absolute inset-y-0 right-12 w-1/3 bg-amber-900/10 mix-blend-multiply backdrop-contrast-125 transition-all duration-500 border-l border-white/20 shadow-2xl flex flex-col justify-end p-4">
+              <span id="visFabricTag" class="text-[10px] uppercase font-bold tracking-widest text-white bg-noir-950/80 px-2 py-1 inline-block w-fit backdrop-blur-sm">
+                Belgian Pure Linen &bull; Oatmeal
+              </span>
+            </div>
+
+            <!-- Header Style Graphic Badge -->
+            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-noir-900 border border-linen-200 shadow-sm">
+              Heading: <span id="visHeaderTag" class="text-brass-600">Pinch Pleat</span>
+            </div>
+            
+            <div class="absolute bottom-4 left-4 bg-noir-950/80 backdrop-blur-sm text-white px-3 py-1.5 text-xs font-mono">
+              Dimension: <span id="visDimTag">84" W &times; 96" L (Pair)</span>
+            </div>
+          </div>
+
+          <!-- Room Scene Selector -->
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-noir-800 mb-2">Simulate In Interior Setting:</label>
+            <div class="grid grid-cols-3 gap-3">
+              <button type="button" onclick="setRoomScene('living')" class="scene-btn border border-brass-600 bg-white py-2 px-3 text-xs font-medium text-noir-900 text-center hover:border-noir-950 transition-colors">
+                Sunlit Lounge
+              </button>
+              <button type="button" onclick="setRoomScene('bedroom')" class="scene-btn border border-linen-300 bg-white/50 py-2 px-3 text-xs font-medium text-noir-900 text-center hover:border-noir-950 transition-colors">
+                Master Suite
+              </button>
+              <button type="button" onclick="setRoomScene('loft')" class="scene-btn border border-linen-300 bg-white/50 py-2 px-3 text-xs font-medium text-noir-900 text-center hover:border-noir-950 transition-colors">
+                Urban Loft
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Customizer Controls (Right 5 Cols) -->
+        <div class="lg:col-span-5 bg-linen-50 p-6 sm:p-8 border border-linen-200">
+          
+          <h3 class="font-serif text-2xl font-light text-noir-950 pb-4 border-b border-linen-200 mb-6">
+            Custom Specification
+          </h3>
+
+          <div class="space-y-6">
+            
+            <!-- Step 1: Fabric Selection -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-noir-900">1. Select Fabric Weave</label>
+                <span class="text-xs text-brass-600 cursor-pointer hover:underline" onclick="openSwatchModal()">Need swatches?</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <label class="fabric-option flex items-center p-3 border border-noir-950 bg-white cursor-pointer transition-all">
+                  <input type="radio" name="fabric_type" value="linen" checked onchange="calculateVisualizerPrice()" class="sr-only">
+                  <div>
+                    <p class="font-bold text-noir-900">Belgian Pure Linen</p>
+                    <p class="text-[11px] text-linen-500">280 GSM &bull; Organic Flanders</p>
+                  </div>
+                </label>
+                <label class="fabric-option flex items-center p-3 border border-linen-300 bg-white/60 cursor-pointer transition-all">
+                  <input type="radio" name="fabric_type" value="velvet" onchange="calculateVisualizerPrice()" class="sr-only">
+                  <div>
+                    <p class="font-bold text-noir-900">Acoustic Velvet</p>
+                    <p class="text-[11px] text-linen-500">420 GSM &bull; Triple Weave</p>
+                  </div>
+                </label>
+                <label class="fabric-option flex items-center p-3 border border-linen-300 bg-white/60 cursor-pointer transition-all">
+                  <input type="radio" name="fabric_type" value="sheer" onchange="calculateVisualizerPrice()" class="sr-only">
+                  <div>
+                    <p class="font-bold text-noir-900">Airy Belgian Sheer</p>
+                    <p class="text-[11px] text-linen-500">140 GSM &bull; Diffused Light</p>
+                  </div>
+                </label>
+                <label class="fabric-option flex items-center p-3 border border-linen-300 bg-white/60 cursor-pointer transition-all">
+                  <input type="radio" name="fabric_type" value="silk" onchange="calculateVisualizerPrice()" class="sr-only">
+                  <div>
+                    <p class="font-bold text-noir-900">Raw Silk Textured</p>
+                    <p class="text-[11px] text-linen-500">310 GSM &bull; Thermal Lined</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 2: Color Palette -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-noir-900 mb-2">2. Color Tone: <span id="selectedColorName" class="font-normal text-linen-500">Oatmeal Sand</span></label>
+              <div class="flex items-center space-x-3">
+                <button type="button" onclick="selectColor('Oatmeal Sand', '#E3DAC9', 'rgba(180, 160, 130, 0.25)')" class="w-8 h-8 rounded-full border-2 border-noir-950 focus:outline-none ring-2 ring-offset-2 ring-brass-500" style="background-color: #E3DAC9;" title="Oatmeal Sand"></button>
+                <button type="button" onclick="selectColor('Slate Charcoal', '#363839', 'rgba(40, 42, 45, 0.4)')" class="w-8 h-8 rounded-full border border-linen-300 focus:outline-none hover:scale-105 transition-transform" style="background-color: #363839;" title="Slate Charcoal"></button>
+                <button type="button" onclick="selectColor('Warm Terracotta', '#B35D43', 'rgba(179, 93, 67, 0.35)')" class="w-8 h-8 rounded-full border border-linen-300 focus:outline-none hover:scale-105 transition-transform" style="background-color: #B35D43;" title="Warm Terracotta"></button>
+                <button type="button" onclick="selectColor('Forest Spruce', '#2A3F33', 'rgba(42, 63, 51, 0.4)')" class="w-8 h-8 rounded-full border border-linen-300 focus:outline-none hover:scale-105 transition-transform" style="background-color: #2A3F33;" title="Forest Spruce"></button>
+                <button type="button" onclick="selectColor('Alabaster Cream', '#F4F1EA', 'rgba(235, 230, 220, 0.25)')" class="w-8 h-8 rounded-full border border-linen-300 focus:outline-none hover:scale-105 transition-transform" style="background-color: #F4F1EA;" title="Alabaster Cream"></button>
+              </div>
+            </div>
+
+            <!-- Step 3: Dimensions -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-noir-900">3. Finished Pair Dimensions</label>
+                <a href="#measure-guide" class="text-xs text-brass-600 underline">Measurement Guide</a>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <span class="text-[11px] text-linen-500 uppercase font-semibold block mb-1">Total Width (Inches)</span>
+                  <input type="number" id="calcWidth" value="84" min="30" max="240" oninput="calculateVisualizerPrice()" class="w-full bg-white border border-linen-300 px-3 py-2 text-sm text-noir-900 focus:border-noir-950 focus:outline-none">
+                </div>
+                <div>
+                  <span class="text-[11px] text-linen-500 uppercase font-semibold block mb-1">Finished Length (Inches)</span>
+                  <input type="number" id="calcLength" value="96" min="40" max="180" oninput="calculateVisualizerPrice()" class="w-full bg-white border border-linen-300 px-3 py-2 text-sm text-noir-900 focus:border-noir-950 focus:outline-none">
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Heading Style -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-noir-900 mb-2">4. Heading Style</label>
+              <select id="calcHeading" onchange="calculateVisualizerPrice()" class="w-full bg-white border border-linen-300 px-3 py-2.5 text-xs font-semibold text-noir-900 uppercase tracking-wider focus:border-noir-950 focus:outline-none">
+                <option value="pinch" data-markup="40">Double French Pinch Pleat (+ $40/pair)</option>
+                <option value="ripple" data-markup="30">Tailored Ripple Fold (+ $30/pair)</option>
+                <option value="grommet" data-markup="0">Matte Brass Grommet (+ $0)</option>
+                <option value="rod" data-markup="0">Classic Rod Pocket (+ $0)</option>
+              </select>
+            </div>
+
+            <!-- Step 5: Lining / Opacity -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-noir-900 mb-2">5. Lining Specification</label>
+              <div class="grid grid-cols-3 gap-2 text-xs">
+                <label class="lining-option p-2 text-center border border-noir-950 bg-white cursor-pointer">
+                  <input type="radio" name="lining_type" value="unlined" checked onchange="calculateVisualizerPrice()" class="sr-only">
+                  <span class="font-bold block">Unlined</span>
+                  <span class="text-[10px] text-linen-500">Natural Drape</span>
+                </label>
+                <label class="lining-option p-2 text-center border border-linen-300 bg-white/60 cursor-pointer">
+                  <input type="radio" name="lining_type" value="privacy" onchange="calculateVisualizerPrice()" class="sr-only">
+                  <span class="font-bold block">Privacy Linen</span>
+                  <span class="text-[10px] text-linen-500">+$45</span>
+                </label>
+                <label class="lining-option p-2 text-center border border-linen-300 bg-white/60 cursor-pointer">
+                  <input type="radio" name="lining_type" value="blackout" onchange="calculateVisualizerPrice()" class="sr-only">
+                  <span class="font-bold block">100% Blackout</span>
+                  <span class="text-[10px] text-linen-500">+$75</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Live Price Summary Box -->
+            <div class="pt-6 border-t border-linen-200 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-linen-500 font-semibold block">Total Estimated Price</span>
+                <div class="flex items-baseline space-x-1">
+                  <span class="font-serif text-3xl font-medium text-noir-950"><span class="currency-symbol">$</span><span id="calculatedPrice">285</span></span>
+                  <span class="text-xs text-linen-500">USD (Pair of 2)</span>
+                </div>
+                <span class="text-[10px] text-emerald-700 font-medium block">✓ Free Global Insured Shipping</span>
+              </div>
+              <button type="button" onclick="addCustomToCart()" class="px-6 py-3.5 bg-noir-950 text-white font-semibold text-xs uppercase tracking-widest hover:bg-brass-600 transition-colors shadow-md">
+                Add To Bag
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FEATURED COLLECTIONS & CATALOG ================= -->
+  <section id="collections" class="py-20 bg-linen-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.25em] text-brass-600">The Catalog</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-light text-noir-950 mt-1">Ready-To-Ship &amp; Made to Measure</h2>
+        </div>
+        
+        <!-- Filter Pills -->
+        <div class="mt-6 md:mt-0 flex flex-wrap gap-2">
+          <button onclick="filterCatalog('all', this)" class="catalog-filter-btn px-4 py-2 border border-noir-950 bg-noir-950 text-white text-xs font-semibold uppercase tracking-wider">All Fabrics</button>
+          <button onclick="filterCatalog('linen', this)" class="catalog-filter-btn px-4 py-2 border border-linen-300 bg-white text-noir-800 text-xs font-semibold uppercase tracking-wider hover:border-noir-950">Belgian Linen</button>
+          <button onclick="filterCatalog('blackout', this)" class="catalog-filter-btn px-4 py-2 border border-linen-300 bg-white text-noir-800 text-xs font-semibold uppercase tracking-wider hover:border-noir-950">Thermal Blackout</button>
+          <button onclick="filterCatalog('sheer', this)" class="catalog-filter-btn px-4 py-2 border border-linen-300 bg-white text-noir-800 text-xs font-semibold uppercase tracking-wider hover:border-noir-950">Sheer Voile</button>
+          <button onclick="filterCatalog('hardware', this)" class="catalog-filter-btn px-4 py-2 border border-linen-300 bg-white text-noir-800 text-xs font-semibold uppercase tracking-wider hover:border-noir-950">Hardware &amp; Tracks</button>
+        </div>
+      </div>
+
+      <!-- Product Cards Grid -->
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Product Card 1 -->
+        <div class="product-item group bg-white border border-linen-200 transition-all hover:shadow-xl" data-category="linen" data-name="Flanders Pure Organic Linen Drapery">
+          <div class="relative aspect-[3/4] overflow-hidden bg-linen-100">
+            <img src="https://images.unsplash.com/photo-1540518614846-7ede433c4ef7?auto=format&fit=crop&w=800&q=80" 
+                 alt="Flanders Pure Organic Linen Drapery" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <span class="absolute top-3 left-3 bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-noir-950">Best Seller</span>
+            <button onclick="quickViewProduct('Flanders Pure Organic Linen Drapery', 210, 'Belgian 100% natural flax, stonewashed for supreme drape and soft texture.', 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef7?auto=format&fit=crop&w=800&q=80')" class="absolute bottom-3 left-3 right-3 py-2.5 bg-noir-950/90 hover:bg-noir-950 text-white text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity text-center">
+              Quick View
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 text-brass-500 text-xs mb-1">
+              <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="text-linen-400 text-[11px]">(142)</span>
+            </div>
+            <h3 class="font-serif text-lg font-medium text-noir-950 group-hover:text-brass-600 transition-colors">Flanders Pure Linen</h3>
+            <p class="text-xs text-linen-500 mt-1">Natural Unlined &bull; 5 Colors</p>
+            <div class="mt-4 flex items-center justify-between pt-3 border-t border-linen-100">
+              <span class="font-semibold text-sm text-noir-900"><span class="currency-symbol">$</span><span class="price-val" data-usd="210">210</span> / pair</span>
+              <button onclick="addToCartDirect('Flanders Pure Linen', 210, 'Natural Oatmeal / 84x96')" class="text-xs uppercase font-bold tracking-wider text-brass-600 hover:text-noir-950">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="product-item group bg-white border border-linen-200 transition-all hover:shadow-xl" data-category="blackout" data-name="Opéra Soundproof Velvet Blackout">
+          <div class="relative aspect-[3/4] overflow-hidden bg-linen-100">
+            <img src="https://images.unsplash.com/photo-1584589167171-541ce45f1eea?auto=format&fit=crop&w=800&q=80" 
+                 alt="Opéra Soundproof Velvet Blackout" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <span class="absolute top-3 left-3 bg-noir-950 text-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider">100% Blackout</span>
+            <button onclick="quickViewProduct('Opéra Soundproof Velvet Blackout', 265, 'Triple-pass insulated heavyweight velvet. Blocks 100% light, eliminates drafts, reduces external street noise.', 'https://images.unsplash.com/photo-1584589167171-541ce45f1eea?auto=format&fit=crop&w=800&q=80')" class="absolute bottom-3 left-3 right-3 py-2.5 bg-noir-950/90 hover:bg-noir-950 text-white text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity text-center">
+              Quick View
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 text-brass-500 text-xs mb-1">
+              <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="text-linen-400 text-[11px]">(89)</span>
+            </div>
+            <h3 class="font-serif text-lg font-medium text-noir-950 group-hover:text-brass-600 transition-colors">Opéra Soundproof Velvet</h3>
+            <p class="text-xs text-linen-500 mt-1">Thermal Insulation &bull; Deep Taupe</p>
+            <div class="mt-4 flex items-center justify-between pt-3 border-t border-linen-100">
+              <span class="font-semibold text-sm text-noir-900"><span class="currency-symbol">$</span><span class="price-val" data-usd="265">265</span> / pair</span>
+              <button onclick="addToCartDirect('Opéra Soundproof Velvet', 265, 'Deep Taupe / 96x96')" class="text-xs uppercase font-bold tracking-wider text-brass-600 hover:text-noir-950">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="product-item group bg-white border border-linen-200 transition-all hover:shadow-xl" data-category="sheer" data-name="Breeze Semisheer Belgian Voile">
+          <div class="relative aspect-[3/4] overflow-hidden bg-linen-100">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" 
+                 alt="Breeze Semisheer Belgian Voile" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <button onclick="quickViewProduct('Breeze Semisheer Belgian Voile', 165, 'Delicate, ethereal sheer linen that softens harsh sunlight into a warm architectural glow.', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80')" class="absolute bottom-3 left-3 right-3 py-2.5 bg-noir-950/90 hover:bg-noir-950 text-white text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity text-center">
+              Quick View
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 text-brass-500 text-xs mb-1">
+              <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="text-linen-400 text-[11px]">(67)</span>
+            </div>
+            <h3 class="font-serif text-lg font-medium text-noir-950 group-hover:text-brass-600 transition-colors">Breeze Semisheer Voile</h3>
+            <p class="text-xs text-linen-500 mt-1">Diffused Daylight &bull; Milk White</p>
+            <div class="mt-4 flex items-center justify-between pt-3 border-t border-linen-100">
+              <span class="font-semibold text-sm text-noir-900"><span class="currency-symbol">$</span><span class="price-val" data-usd="165">165</span> / pair</span>
+              <button onclick="addToCartDirect('Breeze Semisheer Voile', 165, 'Milk White / 84x108')" class="text-xs uppercase font-bold tracking-wider text-brass-600 hover:text-noir-950">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="product-item group bg-white border border-linen-200 transition-all hover:shadow-xl" data-category="hardware" data-name="Atelier Brass Rod & Smart Motorized Track">
+          <div class="relative aspect-[3/4] overflow-hidden bg-linen-100">
+            <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" 
+                 alt="Atelier Brass Rod & Smart Motorized Track" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <span class="absolute top-3 left-3 bg-brass-600 text-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider">Smart Home</span>
+            <button onclick="quickViewProduct('Atelier Brass Rod & Smart Track', 320, 'Solid brass architectural curtain rods with silent smart motorized gliders compatible with Apple HomeKit & Alexa.', 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80')" class="absolute bottom-3 left-3 right-3 py-2.5 bg-noir-950/90 hover:bg-noir-950 text-white text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity text-center">
+              Quick View
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 text-brass-500 text-xs mb-1">
+              <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="text-linen-400 text-[11px]">(38)</span>
+            </div>
+            <h3 class="font-serif text-lg font-medium text-noir-950 group-hover:text-brass-600 transition-colors">Atelier Smart Brass Track</h3>
+            <p class="text-xs text-linen-500 mt-1">Zigbee &amp; Matter &bull; Solid Brass</p>
+            <div class="mt-4 flex items-center justify-between pt-3 border-t border-linen-100">
+              <span class="font-semibold text-sm text-noir-900"><span class="currency-symbol">$</span><span class="price-val" data-usd="320">320</span></span>
+              <button onclick="addToCartDirect('Atelier Smart Brass Track', 320, 'Brushed Brass / 96-inch')" class="text-xs uppercase font-bold tracking-wider text-brass-600 hover:text-noir-950">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FABRIC SWATCH SAMPLE KIT BANNER ================= -->
+  <section id="swatches" class="py-16 bg-noir-950 text-linen-100 border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-brass-400 text-xs font-semibold uppercase tracking-widest mb-3">
+            Touch &amp; Feel Before You Order
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-light text-white leading-tight">
+            Order The Custom Swatch Kit for $<span class="price-val" data-usd="5">5</span>
+          </h2>
+          <p class="mt-3 text-linen-300 text-sm leading-relaxed">
+            Choose any 5 fabric swatches delivered in our signature linen presentation folder with an authentic brass weight guide. The $<span class="price-val" data-usd="5">5</span> charge is credited back 100% to your full drapery order.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+          <button onclick="openSwatchModal()" class="w-full sm:w-auto px-8 py-4 bg-brass-500 text-noir-950 font-semibold text-xs uppercase tracking-widest hover:bg-brass-400 transition-colors shadow-lg">
+            Customize Swatch Box ($5)
+          </button>
+          <div class="text-xs text-linen-400 text-center sm:text-left">
+            <span>✓ 2-Day Air Courier</span><br>
+            <span>✓ 100% Refund Promo Code Included</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MEASUREMENT & HANGING GUIDE ================= -->
+  <section id="measure-guide" class="py-20 bg-linen-100 border-b border-linen-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brass-600">Precision Tailoring</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-light text-noir-950 mt-2">The Measurement &amp; Hanging Guide</h2>
+        <p class="text-linen-500 text-sm sm:text-base mt-3">Follow our 3-step master guidelines. We provide complimentary "Sure-Fit Insurance" on every order.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Step 1 -->
+        <div class="bg-white p-8 border border-linen-200">
+          <div class="w-10 h-10 rounded-full bg-noir-950 text-white font-serif text-lg flex items-center justify-center mb-6">
+            1
+          </div>
+          <h3 class="font-serif text-xl font-medium text-noir-950">Measure Track or Rod Width</h3>
+          <p class="text-xs text-linen-500 mt-2 leading-relaxed">
+            Do not measure the glass pane alone. Extend your rod 8&ndash;12 inches past the window moulding on each side so the curtains can stack cleanly without obstructing natural light.
+          </p>
+          <div class="mt-6 pt-4 border-t border-linen-100 text-xs font-mono text-brass-600">
+            Formula: Window Width + 16" = Rod Width
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white p-8 border border-linen-200">
+          <div class="w-10 h-10 rounded-full bg-noir-950 text-white font-serif text-lg flex items-center justify-center mb-6">
+            2
+          </div>
+          <h3 class="font-serif text-xl font-medium text-noir-950">Determine Length &amp; Puddle</h3>
+          <p class="text-xs text-linen-500 mt-2 leading-relaxed">
+            Measure from the top of the track or rod ring eyelet straight down to the floor. Choose whether you desire a <strong>Floor Float</strong> (0.5" above floor), <strong>Touch</strong> (kissing the floor), or <strong>Opulent Puddle</strong> (+2" to +4").
+          </p>
+          <div class="mt-6 pt-4 border-t border-linen-100 text-xs font-mono text-brass-600">
+            Standard: Ceiling Height - 1" = Curtain Length
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white p-8 border border-linen-200">
+          <div class="w-10 h-10 rounded-full bg-noir-950 text-white font-serif text-lg flex items-center justify-center mb-6">
+            3
+          </div>
+          <h3 class="font-serif text-xl font-medium text-noir-950">Fullness &amp; Pleat Multiplier</h3>
+          <p class="text-xs text-linen-500 mt-2 leading-relaxed">
+            Our atelier automatically incorporates a <strong>2.0x to 2.5x fabric fullness ratio</strong>. Enter your raw rod width, and our master cutters calculate the precise pleat spacing and fabric yardage needed.
+          </p>
+          <div class="mt-6 pt-4 border-t border-linen-100 text-xs font-mono text-brass-600">
+            Atelier Guarantee: Millimeter Precision
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SOCIAL PROOF & LOOKBOOK ================= -->
+  <section id="lookbook" class="py-20 bg-white border-b border-linen-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brass-600">Real Client Residences</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-light text-noir-950 mt-1">Curated Architectural Lookbook</h2>
+        <p class="text-linen-500 text-sm mt-2">See how interior architects and designers style Lumière &amp; Loom in residential and hospitality spaces.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="relative group overflow-hidden bg-linen-100">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dADAe4b4ace?auto=format&fit=crop&w=800&q=80" 
+               alt="Tribeca Penthouse Installation" 
+               class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-xs uppercase tracking-widest text-brass-400 font-semibold">Tribeca Residence, NY</span>
+            <p class="font-serif text-lg mt-1 italic">"The Belgian linen drape transformed the light quality in our great room entirely."</p>
+            <span class="text-[11px] text-linen-300 mt-2">&mdash; Studio K Architecture (Verified Client)</span>
+          </div>
+        </div>
+
+        <div class="relative group overflow-hidden bg-linen-100">
+          <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80" 
+               alt="Cotswolds Country Retreat" 
+               class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-xs uppercase tracking-widest text-brass-400 font-semibold">Cotswolds Manor, UK</span>
+            <p class="font-serif text-lg mt-1 italic">"Unmatched thermal insulation. Soundproofing velvet in our master bedroom is remarkable."</p>
+            <span class="text-[11px] text-linen-300 mt-2">&mdash; Lady Eleanor V. (Verified Client)</span>
+          </div>
+        </div>
+
+        <div class="relative group overflow-hidden bg-linen-100">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" 
+               alt="Parisian Apartment Installation" 
+               class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-xs uppercase tracking-widest text-brass-400 font-semibold">Avenue Montaigne, Paris</span>
+            <p class="font-serif text-lg mt-1 italic">"Ripple fold sheers on motorized tracks. Precise measurements and rapid DHL shipping."</p>
+            <span class="text-[11px] text-linen-300 mt-2">&mdash; Marc D., Interior Stylist</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= KYC, LEGAL & PAYMENT COMPLIANCE FOOTER ================= -->
+  <!-- Tailored specifically for Stripe / Payoneer / Shopify Payments / Airwallex merchant review -->
+  <footer id="compliance-info" class="bg-noir-950 text-linen-200 pt-16 pb-12 border-t border-white/10 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Row: Corporate Identity & Verifications -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Col 1: Corporate Profile -->
+        <div class="lg:col-span-2">
+          <span class="font-serif text-2xl text-white tracking-tight font-medium block">LUMIÈRE &amp; LOOM</span>
+          <span class="text-[10px] uppercase tracking-[0.25em] text-brass-400 font-semibold block mb-4">Lumière &amp; Loom Fabrics LLC</span>
+          <p class="text-linen-400 leading-relaxed max-w-sm mb-4">
+            A premium direct-to-consumer home textile maison specializing in bespoke window coverings, European flax linens, and certified thermal acoustics.
+          </p>
+          <div class="space-y-1.5 text-[11px] text-linen-300">
+            <p><strong class="text-white">Legal Entity:</strong> Lumière &amp; Loom Fabrics LLC</p>
+            <p><strong class="text-white">Registered Office:</strong> 440 N Barranca Ave #7210, Covina, CA 91723, USA</p>
+            <p><strong class="text-white">European Fulfillment Atelier:</strong> Rue de la Filature 14, 9000 Ghent, Belgium</p>
+            <p><strong class="text-white">Customer Support:</strong> support@lumiere-loom.com</p>
+            <p><strong class="text-white">Inquiries &amp; Orders:</strong> +1 (800) 419-7281 (Mon&ndash;Fri 9am&ndash;6pm EST)</p>
+          </div>
+        </div>
+
+        <!-- Col 2: Customer Service & Policies -->
+        <div>
+          <h4 class="font-bold uppercase tracking-widest text-white text-xs mb-4">Client Support</h4>
+          <ul class="space-y-2.5 text-linen-400">
+            <li><button onclick="openPolicyModal('shipping')" class="hover:text-white transition-colors">Shipping &amp; Delivery Policy</button></li>
+            <li><button onclick="openPolicyModal('returns')" class="hover:text-white transition-colors">30-Day Return &amp; Refund Policy</button></li>
+            <li><button onclick="openPolicyModal('surefit')" class="hover:text-white transition-colors">Sure-Fit Measurement Guarantee</button></li>
+            <li><button onclick="openPolicyModal('terms')" class="hover:text-white transition-colors">Terms of Service</button></li>
+            <li><button onclick="openPolicyModal('privacy')" class="hover:text-white transition-colors">Privacy Policy (GDPR / CCPA)</button></li>
+            <li><a href="#measure-guide" class="hover:text-white transition-colors">How To Measure</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Product Lines -->
+        <div>
+          <h4 class="font-bold uppercase tracking-widest text-white text-xs mb-4">Collections</h4>
+          <ul class="space-y-2.5 text-linen-400">
+            <li><a href="#visualizer" class="hover:text-white transition-colors">Custom Drape Calculator</a></li>
+            <li><a href="#collections" class="hover:text-white transition-colors">Belgian Linen Drapes</a></li>
+            <li><a href="#collections" class="hover:text-white transition-colors">100% Blackout Velvet</a></li>
+            <li><a href="#collections" class="hover:text-white transition-colors">Airy Sheer Voiles</a></li>
+            <li><a href="#collections" class="hover:text-white transition-colors">Architectural Hardware</a></li>
+            <li><button onclick="openSwatchModal()" class="text-brass-400 hover:text-brass-300 transition-colors">Swatch Kit ($5 Refundable)</button></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Payment Security & KYC Seals -->
+        <div>
+          <h4 class="font-bold uppercase tracking-widest text-white text-xs mb-4">Verified Merchant</h4>
+          <div class="space-y-3 text-[11px] text-linen-400">
+            <div class="p-3 bg-white/5 border border-white/10 rounded-sm">
+              <span class="text-emerald-400 font-semibold block flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                PCI-DSS Level 1 Secure
+              </span>
+              <p class="mt-1 text-[10px] text-linen-400">Encrypted 256-bit SSL transaction gateway. No raw card data stored.</p>
+            </div>
+            <p class="text-[10px] text-linen-500">
+              Verified business merchant on Stripe, Payoneer, Airwallex, and PayPal network.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row: Payment Logos & Copyright -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="text-[11px] text-linen-500 text-center md:text-left">
+          &copy; 2026 Lumière &amp; Loom Fabrics LLC. All Rights Reserved. Master of Custom Window Coverings.
+        </p>
+
+        <!-- Payment Gateway Logos -->
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <span class="px-2.5 py-1 bg-white text-noir-900 font-bold text-[10px] rounded tracking-wider">VISA</span>
+          <span class="px-2.5 py-1 bg-white text-noir-900 font-bold text-[10px] rounded tracking-wider">MASTERCARD</span>
+          <span class="px-2.5 py-1 bg-white text-blue-900 font-bold text-[10px] rounded tracking-wider">AMEX</span>
+          <span class="px-2.5 py-1 bg-white text-noir-900 font-bold text-[10px] rounded tracking-wider">APPLE PAY</span>
+          <span class="px-2.5 py-1 bg-white text-blue-700 font-bold text-[10px] rounded tracking-wider">PAYPAL</span>
+          <span class="px-2.5 py-1 bg-white text-noir-900 font-bold text-[10px] rounded tracking-wider">STRIPE</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= SHOPPING CART DRAWER ================= -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+    <div class="absolute inset-0 bg-noir-950/60 backdrop-blur-sm pointer-events-auto transition-opacity" onclick="toggleCartDrawer(false)"></div>
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10 pointer-events-none">
+      <div class="w-screen max-w-md bg-white shadow-2xl pointer-events-auto flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out" id="cartDrawerPanel">
+        
+        <!-- Cart Header -->
+        <div class="p-6 border-b border-linen-200 flex items-center justify-between bg-linen-50">
+          <div>
+            <h3 class="font-serif text-2xl font-medium text-noir-950">Your Cart</h3>
+            <span class="text-xs text-linen-500" id="cartItemCountSubtitle">2 items in bag</span>
+          </div>
+          <button onclick="toggleCartDrawer(false)" class="p-2 text-noir-800 hover:text-brass-600 focus:outline-none" aria-label="Close cart">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Free Shipping Progress -->
+        <div class="px-6 py-3 bg-linen-100 border-b border-linen-200">
+          <div class="flex justify-between text-xs font-semibold text-noir-900 mb-1">
+            <span id="shippingProgressText">Free Insured Global Shipping Unlocked!</span>
+            <span class="text-emerald-700">✓ Free</span>
+          </div>
+          <div class="w-full bg-linen-300 h-1.5 rounded-full overflow-hidden">
+            <div id="shippingProgressBar" class="bg-emerald-600 h-full w-full transition-all"></div>
+          </div>
+        </div>
+
+        <!-- Cart Items List -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-4" id="cartItemList">
+          <!-- Item 1 -->
+          <div class="cart-item flex gap-4 pb-4 border-b border-linen-200" data-id="item1">
+            <img src="https://images.unsplash.com/photo-1540518614846-7ede433c4ef7?auto=format&fit=crop&w=200&q=80" alt="Flanders Pure Linen" class="w-20 h-24 object-cover bg-linen-100 border border-linen-200">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex justify-between items-start">
+                  <h4 class="font-serif text-base font-medium text-noir-950">Flanders Pure Linen (Pair)</h4>
+                  <button onclick="removeCartItem('item1')" class="text-linen-400 hover:text-red-600 text-xs">&times;</button>
+                </div>
+                <p class="text-xs text-linen-500">Oatmeal Sand &bull; 84" W &times; 96" L</p>
+                <p class="text-[11px] text-linen-400">Heading: Double French Pinch</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="flex items-center border border-linen-300">
+                  <button onclick="updateItemQty('item1', -1)" class="px-2 py-0.5 text-xs text-noir-800 hover:bg-linen-100">-</button>
+                  <span class="px-2.5 py-0.5 text-xs font-semibold item-qty">1</span>
+                  <button onclick="updateItemQty('item1', 1)" class="px-2 py-0.5 text-xs text-noir-800 hover:bg-linen-100">+</button>
+                </div>
+                <span class="font-semibold text-sm text-noir-950"><span class="currency-symbol">$</span><span class="item-subtotal">210</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Swatch Box -->
+          <div class="cart-item flex gap-4 pb-4 border-b border-linen-200" data-id="item2">
+            <div class="w-20 h-24 bg-linen-200 border border-linen-300 flex items-center justify-center p-2 text-center">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-noir-800">Custom Swatch Box (5)</span>
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex justify-between items-start">
+                  <h4 class="font-serif text-base font-medium text-noir-950">Curated Fabric Swatch Box</h4>
+                  <button onclick="removeCartItem('item2')" class="text-linen-400 hover:text-red-600 text-xs">&times;</button>
+                </div>
+                <p class="text-xs text-linen-500">5 Weaves Selected &bull; Express Air</p>
+                <p class="text-[11px] text-emerald-700 font-medium">100% Refundable on drapery order</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-xs text-linen-400">Qty: 1</span>
+                <span class="font-semibold text-sm text-noir-950"><span class="currency-symbol">$</span><span class="item-subtotal">5</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="p-6 border-t border-linen-200 bg-linen-50 space-y-4">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-linen-500">Subtotal:</span>
+            <span class="font-serif text-2xl font-semibold text-noir-950"><span class="currency-symbol">$</span><span id="cartSubtotalAmount">215</span></span>
+          </div>
+          <p class="text-[11px] text-linen-500">Taxes calculated at checkout. Duties prepaid for DDP jurisdictions.</p>
+          
+          <button onclick="proceedToCheckout()" class="w-full py-4 bg-noir-950 hover:bg-brass-600 text-white font-semibold text-xs uppercase tracking-widest transition-colors shadow-lg flex items-center justify-center space-x-2">
+            <span>Proceed to Secure Checkout</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+
+          <div class="flex items-center justify-center space-x-4 text-[10px] text-linen-500">
+            <span>🔒 256-Bit SSL Encrypted</span>
+            <span>&bull;</span>
+            <span>30-Day Money Back</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FABRIC SWATCH SAMPLE MODAL ================= -->
+  <div id="swatchModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+    <div class="fixed inset-0 bg-noir-950/70 backdrop-blur-sm" onclick="closeSwatchModal()"></div>
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+      <div class="relative bg-white max-w-2xl w-full p-6 sm:p-8 border border-linen-300 shadow-2xl">
+        <button onclick="closeSwatchModal()" class="absolute top-6 right-6 text-linen-400 hover:text-noir-950 text-2xl leading-none">&times;</button>
+        
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brass-600">Sample Atelier</span>
+        <h3 class="font-serif text-3xl font-light text-noir-950 mt-1">Order Custom Fabric Swatches</h3>
+        <p class="text-xs text-linen-500 mt-2">Select up to 5 fabric samples. Delivered in our presentation folder with free shipping. The $<span class="price-val" data-usd="5">5</span> cost is refunded as a credit voucher.</p>
+
+        <div class="mt-6 space-y-4">
+          <div class="text-xs font-semibold uppercase tracking-wider text-noir-900 flex justify-between">
+            <span>Choose Your Samples (<span id="swatchCount">3</span>/5 selected)</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-72 overflow-y-auto pr-1">
+            <label class="swatch-select flex items-center p-3 border border-noir-950 bg-linen-50 cursor-pointer">
+              <input type="checkbox" checked onchange="updateSwatchCounter(this)" class="accent-noir-950 mr-3">
+              <span class="w-5 h-5 rounded-full mr-2 border border-linen-300" style="background:#E3DAC9;"></span>
+              <span class="text-xs font-medium text-noir-900">Belgian Linen &ndash; Oatmeal</span>
+            </label>
+            <label class="swatch-select flex items-center p-3 border border-noir-950 bg-linen-50 cursor-pointer">
+              <input type="checkbox" checked onchange="updateSwatchCounter(this)" class="accent-noir-950 mr-3">
+              <span class="w-5 h-5 rounded-full mr-2 border border-linen-300" style="background:#F4F1EA;"></span>
+              <span class="text-xs font-medium text-noir-900">Belgian Linen &ndash; Pure Chalk</span>
+            </label>
+            <label class="swatch-select flex items-center p-3 border border-noir-950 bg-linen-50 cursor-pointer">
+              <input type="checkbox" checked onchange="updateSwatchCounter(this)" class="accent-noir-950 mr-3">
+              <span class="w-5 h-5 rounded-full mr-2 border border-linen-300" style="background:#363839;"></span>
+              <span class="text-xs font-medium text-noir-900">Opéra Velvet &ndash; Slate</span>
+            </label>
+            <label class="swatch-select flex items-center p-3 border border-linen-200 bg-white cursor-pointer">
+              <input type="checkbox" onchange="updateSwatchCounter(this)" class="accent-noir-950 mr-3">
+              <span class="w-5 h-5 rounded-full mr-2 border border-linen-300" style="background:#B35D43;"></span>
+              <span class="text-xs font-medium text-noir-900">Opéra Velvet &ndash; Terracotta</span>
+            </label>
+            <label class="swatch-select flex items-center p-3 border border-linen-200 bg-white cursor-pointer">
+              <input type="checkbox" onchange="updateSwatchCounter(this)" class="accent-noir-950 mr-3">
+              <span class="w-5 h-5 rounded-full mr-2 border border-linen-300" style="background:#2A3F33;"></span>
+              <span class="text-xs font-medium text-noir-900">Belgian Linen &ndash; Forest Spruce</span>
+            </label>
+            <label class="swatch-select flex items-center p-3 border border-linen-200 bg-white cursor-pointer">
+              <input type="checkbox" onchange="updateSwatchCounter(this)" class="accent-noir-950 mr-3">
+              <span class="w-5 h-5 rounded-full mr-2 border border-linen-300" style="background:#FAF9F6;"></span>
+              <span class="text-xs font-medium text-noir-900">Breeze Voile &ndash; Soft Milk</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-linen-200 flex items-center justify-between">
+          <div>
+            <span class="text-xs text-linen-500">Kit Price:</span>
+            <span class="font-serif text-2xl font-medium text-noir-950 block"><span class="currency-symbol">$</span><span class="price-val" data-usd="5">5</span></span>
+          </div>
+          <button onclick="addSwatchKitToCart()" class="px-6 py-3 bg-noir-950 text-white font-semibold text-xs uppercase tracking-widest hover:bg-brass-600 transition-colors">
+            Add Swatch Kit To Bag
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= COMPLIANCE & LEGAL POLICIES MODAL (KYC ESSENTIAL) ================= -->
+  <div id="policyModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+    <div class="fixed inset-0 bg-noir-950/75 backdrop-blur-sm" onclick="closePolicyModal()"></div>
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+      <div class="relative bg-white max-w-3xl w-full p-8 border border-linen-300 shadow-2xl max-h-[85vh] overflow-y-auto">
+        <button onclick="closePolicyModal()" class="absolute top-6 right-6 text-linen-400 hover:text-noir-950 text-2xl leading-none">&times;</button>
+        
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-brass-600">Compliance &amp; Governance</span>
+        <h3 id="policyModalTitle" class="font-serif text-3xl font-light text-noir-950 mt-1">Shipping &amp; Delivery Policy</h3>
+        
+        <div id="policyModalContent" class="mt-6 text-xs text-noir-800 space-y-4 leading-relaxed border-t border-linen-200 pt-6">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-linen-200 flex justify-end">
+          <button onclick="closePolicyModal()" class="px-6 py-2.5 bg-noir-950 text-white text-xs uppercase tracking-widest font-semibold hover:bg-brass-600">
+            Close Policy
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= QUICK VIEW PRODUCT MODAL ================= -->
+  <div id="quickViewModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+    <div class="fixed inset-0 bg-noir-950/75 backdrop-blur-sm" onclick="closeQuickView()"></div>
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+      <div class="relative bg-white max-w-3xl w-full p-6 sm:p-8 border border-linen-300 shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <button onclick="closeQuickView()" class="absolute top-4 right-4 text-linen-400 hover:text-noir-950 text-2xl leading-none">&times;</button>
+        
+        <div class="aspect-[3/4] bg-linen-100 overflow-hidden border border-linen-200">
+          <img id="qvImage" src="" alt="Product Detail" class="w-full h-full object-cover">
+        </div>
+
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brass-600">Artisan Tailored</span>
+          <h3 id="qvTitle" class="font-serif text-2xl font-light text-noir-950 mt-1">Product Title</h3>
+          <p id="qvPrice" class="font-serif text-2xl font-medium text-noir-950 mt-2">$0</p>
+          <p id="qvDesc" class="text-xs text-linen-500 mt-4 leading-relaxed">Description goes here.</p>
+          
+          <div class="mt-6 space-y-3">
+            <div>
+              <label class="block text-[11px] font-semibold uppercase tracking-wider text-noir-900 mb-1">Standard Pair Dimension</label>
+              <select class="w-full bg-linen-50 border border-linen-300 text-xs px-3 py-2 text-noir-900">
+                <option>84" Width x 96" Length (Pair)</option>
+                <option>100" Width x 96" Length (Pair)</option>
+                <option>100" Width x 108" Length (Pair)</option>
+              </select>
+            </div>
+            
+            <button id="qvAddToCartBtn" class="w-full py-3.5 bg-noir-950 text-white font-semibold text-xs uppercase tracking-widest hover:bg-brass-600 transition-colors">
+              Add To Cart
+            </button>
+            <p class="text-[10px] text-center text-linen-400">Shipped in 3&ndash;5 business days &bull; Insured DHL</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= INTERACTIVE JAVASCRIPT ================= -->
+  <script>
+    // Currency exchange rates relative to USD
+    const currencyRates = {
+      USD: { symbol: '$', rate: 1.0 },
+      EUR: { symbol: '€', rate: 0.92 },
+      GBP: { symbol: '£', rate: 0.79 },
+      AUD: { symbol: 'A$', rate: 1.52 }
+    };
+    let currentCurrency = 'USD';
+
+    // Room Scenes for Visualizer
+    const roomScenes = {
+      living: {
+        img: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=80',
+        title: 'Sunlit Lounge'
+      },
+      bedroom: {
+        img: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=80',
+        title: 'Master Suite'
+      },
+      loft: {
+        img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=80',
+        title: 'Urban Minimalist Loft'
+      }
+    };
+
+    // Fabric base rates per sq.ft
+    const fabricPricing = {
+      linen: 2.8,
+      velvet: 3.4,
+      sheer: 2.1,
+      silk: 3.8
+    };
+
+    // State
+    let selectedColor = { name: 'Oatmeal Sand', colorHex: '#E3DAC9', overlayTint: 'rgba(180, 160, 130, 0.25)' };
+
+    // --- Currency Switcher ---
+    function changeCurrency(currencyKey) {
+      currentCurrency = currencyKey;
+      const meta = currencyRates[currencyKey];
+      
+      // Update symbols
+      document.querySelectorAll('.currency-symbol').forEach(el => el.textContent = meta.symbol);
+      
+      // Update static USD tagged values
+      document.querySelectorAll('.price-val').forEach(el => {
+        const usd = parseFloat(el.getAttribute('data-usd'));
+        el.textContent = Math.round(usd * meta.rate);
+      });
+
+      calculateVisualizerPrice();
+      recalcCartTotal();
+    }
+
+    // --- Visualizer Logic ---
+    function setRoomScene(sceneKey) {
+      const scene = roomScenes[sceneKey];
+      document.getElementById('visRoomImage').src = scene.img;
+      
+      document.querySelectorAll('.scene-btn').forEach(btn => {
+        btn.classList.remove('border-brass-600', 'bg-white');
+        btn.classList.add('border-linen-300', 'bg-white/50');
+      });
+      event.currentTarget.classList.add('border-brass-600', 'bg-white');
+      event.currentTarget.classList.remove('border-linen-300', 'bg-white/50');
+    }
+
+    function selectColor(name, hex, overlayTint) {
+      selectedColor = { name, colorHex: hex, overlayTint };
+      document.getElementById('selectedColorName').textContent = name;
+      document.getElementById('visDrapeOverlay').style.backgroundColor = overlayTint;
+      
+      // Update fabric tag text
+      const fabricRadio = document.querySelector('input[name="fabric_type"]:checked').value;
+      const fabricNames = { linen: 'Belgian Pure Linen', velvet: 'Acoustic Velvet', sheer: 'Airy Belgian Sheer', silk: 'Raw Silk Blend' };
+      document.getElementById('visFabricTag').textContent = `${fabricNames[fabricRadio]} • ${name}`;
+    }
+
+    function calculateVisualizerPrice() {
+      const width = parseFloat(document.getElementById('calcWidth').value) || 84;
+      const length = parseFloat(document.getElementById('calcLength').value) || 96;
+      
+      const fabricType = document.querySelector('input[name="fabric_type"]:checked').value;
+      const liningType = document.querySelector('input[name="lining_type"]:checked').value;
+      const headingSelect = document.getElementById('calcHeading');
+      const headingMarkup = parseFloat(headingSelect.options[headingSelect.selectedIndex].getAttribute('data-markup')) || 0;
+      
+      // Style active radio borders
+      document.querySelectorAll('.fabric-option').forEach(el => {
+        const inp = el.querySelector('input');
+        if (inp.checked) {
+          el.classList.add('border-noir-950', 'bg-white');
+          el.classList.remove('border-linen-300', 'bg-white/60');
+        } else {
+          el.classList.remove('border-noir-950', 'bg-white');
+          el.classList.add('border-linen-300', 'bg-white/60');
+        }
+      });
+
+      document.querySelectorAll('.lining-option').forEach(el => {
+        const inp = el.querySelector('input');
+        if (inp.checked) {
+          el.classList.add('border-noir-950', 'bg-white');
+          el.classList.remove('border-linen-300', 'bg-white/60');
+        } else {
+          el.classList.remove('border-noir-950', 'bg-white');
+          el.classList.add('border-linen-300', 'bg-white/60');
+        }
+      });
+
+      // Price calculation formula
+      const sqInches = width * length;
+      const sqFt = sqInches / 144;
+      let liningCost = 0;
+      if (liningType === 'privacy') liningCost = 45;
+      if (liningType === 'blackout') liningCost = 75;
+
+      const ratePerFt = fabricPricing[fabricType] || 2.5;
+      const baseFabricCost = sqFt * ratePerFt * 3.2; // Atelier workmanship multiplier
+      
+      const rawPriceUSD = Math.round(baseFabricCost + liningCost + headingMarkup);
+      const converted = Math.round(rawPriceUSD * currencyRates[currentCurrency].rate);
+      
+      document.getElementById('calculatedPrice').textContent = converted;
+      document.getElementById('visDimTag').textContent = `${width}" W × ${length}" L (Pair)`;
+      
+      const headingNames = { pinch: 'Pinch Pleat', ripple: 'Tailored Ripple Fold', grommet: 'Matte Grommet', rod: 'Rod Pocket' };
+      document.getElementById('visHeaderTag').textContent = headingNames[headingSelect.value];
+    }
+
+    // Add Custom Visualizer item to cart
+    function addCustomToCart() {
+      const price = parseFloat(document.getElementById('calculatedPrice').textContent);
+      const fabric = document.querySelector('input[name="fabric_type"]:checked').value;
+      const width = document.getElementById('calcWidth').value;
+      const length = document.getElementById('calcLength').value;
+      const title = `Bespoke Custom Drape (${fabric.toUpperCase()})`;
+      const spec = `${selectedColor.name} • ${width}"W × ${length}"L (Pair)`;
+
+      addToCartDirect(title, price, spec);
+      toggleCartDrawer(true);
+    }
+
+    // --- Catalog Filter ---
+    function filterCatalog(category, btn) {
+      document.querySelectorAll('.catalog-filter-btn').forEach(b => {
+        b.classList.remove('border-noir-950', 'bg-noir-950', 'text-white');
+        b.classList.add('border-linen-300', 'bg-white', 'text-noir-800');
+      });
+      btn.classList.add('border-noir-950', 'bg-noir-950', 'text-white');
+      btn.classList.remove('border-linen-300', 'bg-white', 'text-noir-800');
+
+      document.querySelectorAll('.product-item').forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function filterProductsQuick(term) {
+      const query = term.toLowerCase();
+      document.querySelectorAll('.product-item').forEach(item => {
+        const name = item.getAttribute('data-name').toLowerCase();
+        if (name.includes(query)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function toggleSearch() {
+      const searchBox = document.getElementById('searchDropdown');
+      searchBox.classList.toggle('hidden');
+      if (!searchBox.classList.contains('hidden')) {
+        document.getElementById('quickSearchInput').focus();
+      }
+    }
+
+    // --- Quick View Modal ---
+    function quickViewProduct(title, priceUSD, desc, img) {
+      document.getElementById('qvTitle').textContent = title;
+      const priceVal = Math.round(priceUSD * currencyRates[currentCurrency].rate);
+      document.getElementById('qvPrice').innerHTML = `<span class="currency-symbol">${currencyRates[currentCurrency].symbol}</span>${priceVal}`;
+      document.getElementById('qvDesc').textContent = desc;
+      document.getElementById('qvImage').src = img;
+      
+      document.getElementById('qvAddToCartBtn').onclick = function() {
+        addToCartDirect(title, priceVal, 'Standard Custom Pair');
+        closeQuickView();
+        toggleCartDrawer(true);
+      };
+
+      document.getElementById('quickViewModal').classList.remove('hidden');
+    }
+
+    function closeQuickView() {
+      document.getElementById('quickViewModal').classList.add('hidden');
+    }
+
+    // --- Cart Drawer State & Logic ---
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById('cartDrawer');
+      const panel = document.getElementById('cartDrawerPanel');
+      if (open) {
+        drawer.classList.remove('pointer-events-none', 'opacity-0');
+        drawer.classList.add('pointer-events-auto', 'opacity-100');
+        panel.classList.remove('translate-x-full');
+      } else {
+        drawer.classList.add('pointer-events-none', 'opacity-0');
+        drawer.classList.remove('pointer-events-auto', 'opacity-100');
+        panel.classList.add('translate-x-full');
+      }
+    }
+
+    function addToCartDirect(name, price, detail) {
+      const list = document.getElementById('cartItemList');
+      const id = 'item-' + Date.now();
+
+      const itemHtml = `
+        <div class="cart-item flex gap-4 pb-4 border-b border-linen-200" data-id="${id}" data-price="${price}">
+          <div class="w-20 h-24 bg-linen-200 border border-linen-300 flex items-center justify-center p-2 text-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-noir-800">Custom Cut</span>
+          </div>
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start">
+                <h4 class="font-serif text-base font-medium text-noir-950">${name}</h4>
+                <button onclick="removeCartItem('${id}')" class="text-linen-400 hover:text-red-600 text-xs">&times;</button>
+              </div>
+              <p class="text-xs text-linen-500">${detail}</p>
+            </div>
+            <div class="flex justify-between items-center mt-2">
+              <span class="text-xs text-linen-500">Qty: 1</span>
+              <span class="font-semibold text-sm text-noir-950"><span class="currency-symbol">${currencyRates[currentCurrency].symbol}</span><span class="item-subtotal">${price}</span></span>
+            </div>
+          </div>
+        </div>
+      `;
+      list.insertAdjacentHTML('afterbegin', itemHtml);
+      recalcCartTotal();
+      toggleCartDrawer(true);
+    }
+
+    function removeCartItem(id) {
+      const el = document.querySelector(`.cart-item[data-id="${id}"]`);
+      if (el) el.remove();
+      recalcCartTotal();
+    }
+
+    function updateItemQty(id, delta) {
+      const el = document.querySelector(`.cart-item[data-id="${id}"]`);
+      if (!el) return;
+      const qtySpan = el.querySelector('.item-qty');
+      let current = parseInt(qtySpan.textContent) + delta;
+      if (current < 1) {
+        removeCartItem(id);
+        return;
+      }
+      qtySpan.textContent = current;
+      const sub = el.querySelector('.item-subtotal');
+      sub.textContent = current * 210;
+      recalcCartTotal();
+    }
+
+    function recalcCartTotal() {
+      let sum = 0;
+      let count = 0;
+      document.querySelectorAll('.cart-item').forEach(el => {
+        const sub = parseFloat(el.querySelector('.item-subtotal').textContent) || 0;
+        sum += sub;
+        count++;
+      });
+      document.getElementById('cartSubtotalAmount').textContent = sum;
+      document.getElementById('cartBadgeCount').textContent = count;
+      document.getElementById('cartItemCountSubtitle').textContent = `${count} item${count === 1 ? '' : 's'} in bag`;
+    }
+
+    function proceedToCheckout() {
+      alert("Redirecting to 256-Bit SSL Encrypted Checkout via Stripe / Payoneer Secure Gateway (Test Sandbox Mode Ready).");
+    }
+
+    // --- Swatch Sample Modal Logic ---
+    function openSwatchModal() {
+      document.getElementById('swatchModal').classList.remove('hidden');
+    }
+    function closeSwatchModal() {
+      document.getElementById('swatchModal').classList.add('hidden');
+    }
+    function updateSwatchCounter(cb) {
+      let checked = document.querySelectorAll('.swatch-select input:checked');
+      if (checked.length > 5) {
+        cb.checked = false;
+        alert("A maximum of 5 swatch samples are included per $5 sample kit.");
+        return;
+      }
+      document.getElementById('swatchCount').textContent = checked.length;
+    }
+    function addSwatchKitToCart() {
+      const price = Math.round(5 * currencyRates[currentCurrency].rate);
+      addToCartDirect('Curated Fabric Swatch Box (5 Samples)', price, 'Express Courier • 100% Refundable Voucher');
+      closeSwatchModal();
+      toggleCartDrawer(true);
+    }
+
+    // --- Compliance Policy Modal (KYC Crucial) ---
+    const policyData = {
+      shipping: {
+        title: "Shipping & International Delivery Policy",
+        html: `
+          <p><strong>Fulfillment Timeframes:</strong> Ready-to-ship swatches and hardware are dispatched within 24–48 business hours. Bespoke custom drapery cut to exact dimensions requires 10 to 14 business days of precision tailoring in our Ghent, Belgium or California atelier.</p>
+          <p><strong>Carriers:</strong> We partner exclusively with DHL Express, FedEx Priority, and UPS Air with door-to-door GPS tracking and signature verification upon delivery.</p>
+          <p><strong>Customs & Duties (DDP):</strong> For the United States, European Union, United Kingdom, Canada, and Australia, all import tariffs and VAT are pre-calculated and cleared by Lumière & Loom Fabrics LLC. No surprise clearance fees at your door.</p>
+          <p><strong>Lost or Damaged Shipments:</strong> Every package is fully insured up to $5,000 against transit damage or carrier loss. Contact support@lumiere-loom.com with your order number for expedited remakes.</p>
+        `
+      },
+      returns: {
+        title: "30-Day Return & Cancellation Policy",
+        html: `
+          <p><strong>30-Day Hassle-Free Returns:</strong> Fabric swatch sample kits, standard drapery tracks, hanging rods, and uncustomized inventory items may be returned within 30 days of receipt in original packaging for a 100% refund.</p>
+          <p><strong>Custom Drapery Sure-Fit Protection:</strong> Because bespoke curtains are tailored to your unique window dimensions, traditional restock returns are not accepted. However, under our <em>Sure-Fit Guarantee</em>, if there is any atelier craftsmanship defect or sizing discrepancy of more than 1/4 inch, we will alter or remake your curtains completely free of charge.</p>
+          <p><strong>Refund Execution:</strong> Refunds are credited back to the original method of payment (Visa, Mastercard, Amex, PayPal) within 3–5 business days following return facility inspection.</p>
+        `
+      },
+      surefit: {
+        title: "Sure-Fit Measurement Guarantee",
+        html: `
+          <p>We believe custom drapery should be completely stress-free. If you followed our published Measurement Guide and your curtains arrive too long, too short, or improperly fitted due to measurement miscalculations, contact us within 14 days of delivery.</p>
+          <p>Our dedicated window specialists will review your installation photos and either pay for local tailor alterations or dispatch a complimentary replacement pair.</p>
+        `
+      },
+      terms: {
+        title: "Terms of Service & Commercial Conditions",
+        html: `
+          <p><strong>Governing Entity:</strong> This website is operated by Lumière & Loom Fabrics LLC. Throughout the site, the terms "we", "us" and "our" refer to Lumière & Loom Fabrics LLC.</p>
+          <p><strong>Order Acceptance & Payment:</strong> By submitting an order, you authorize our designated payment processors (Stripe, Payoneer, Airwallex, PayPal) to charge your designated credit card or payment account.</p>
+          <p><strong>Fabric Characteristics:</strong> 100% pure Belgian flax linen is a natural fiber with intrinsic slubs, organic weave variations, and subtle dye shifts. These are hallmarks of authenticity, not defects.</p>
+        `
+      },
+      privacy: {
+        title: "Privacy Policy & Data Protection (GDPR & CCPA)",
+        html: `
+          <p><strong>Data Collection:</strong> We collect necessary transactional information (shipping address, email, phone number) solely to process orders, calculate freight, and send shipment tracking updates.</p>
+          <p><strong>Payment Security:</strong> Credit card numbers are tokenized and processed directly via PCI-DSS Level 1 certified gateways. Lumière & Loom Fabrics LLC never stores or has access to your raw payment card credentials.</p>
+          <p><strong>Your Rights:</strong> Under GDPR and CCPA, you have the right to access, rectify, or request permanent deletion of your customer data by submitting an email to privacy@lumiere-loom.com.</p>
+        `
+      }
+    };
+
+    function openPolicyModal(key) {
+      const p = policyData[key];
+      if (!p) return;
+      document.getElementById('policyModalTitle').textContent = p.title;
+      document.getElementById('policyModalContent').innerHTML = p.html;
+      document.getElementById('policyModal').classList.remove('hidden');
+    }
+
+    function closePolicyModal() {
+      document.getElementById('policyModal').classList.add('hidden');
+    }
+
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('hidden');
+    }
+
+    // Initialize visualizer price
+    window.addEventListener('DOMContentLoaded', () => {
+      calculateVisualizerPrice();
+      recalcCartTotal();
+    });
+  </script>
+
+</body>
+</html>
